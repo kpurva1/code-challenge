@@ -1,6 +1,17 @@
 Programmin language : Java
-  java version "1.8.0_111"
-  Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
+    java version "1.8.0_111"
+    Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
+
+     List of JAR files to be added to the project:
+            java-json.jar
+            json-simple-1.1.1.jar
+            mysql-connector-java-5.0.8-bin.jar
+
+     These JAR files need to be downloaded before adding to project
+     How to add JAR files to the project:
+
+     Right click project name -> Build Path -> Configure Build Path -> select tab Libraries ->Add JARs
+
 
 Database : MySQL
   Schema Name : shutterfly
