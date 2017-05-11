@@ -1,0 +1,57 @@
+
+table : customer 
+CREATE TABLE shutterfly.`customer` (
+  `cust_key` varchar(20) NOT NULL,
+  `event_time` timestamp(3) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `addr_city` varchar(45) DEFAULT NULL,
+  `addr_state` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`cust_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+table : image
+CREATE TABLE shutterfly.`image` (
+  `img_key` varchar(20) NOT NULL,
+  `event_time` timestamp(3) DEFAULT NULL,
+  `customer_id` varchar(20) DEFAULT NULL,
+  `camera_make` varchar(45) DEFAULT NULL,
+  `camera_model` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`img_key`),
+  KEY `cust_key_idx` (`customer_id`),
+  CONSTRAINT `cust_key` FOREIGN KEY (`customer_id`) REFERENCES shutterfly.`customer` (`cust_key`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+table : order
+CREATE TABLE shutterfly.`order` (
+  `order_key` varchar(20) NOT NULL,
+  `event_time` timestamp(3) DEFAULT NULL,
+  `customer_id` varchar(20) DEFAULT NULL,
+  `total_amount` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`order_key`),
+  KEY `order_cust_key_idx` (`customer_id`),
+  CONSTRAINT `order_cust_key` FOREIGN KEY (`customer_id`) REFERENCES shutterfly.`customer` (`cust_key`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+table : site_visit
+CREATE TABLE shutterfly.`site_visit` (
+  `visit_key` varchar(20) NOT NULL,
+  `event_time` timestamp(3) DEFAULT NULL,
+  `customer_id` varchar(20) DEFAULT NULL,
+  `tags` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`visit_key`),
+  KEY `visit_cust_key_idx` (`customer_id`),
+  CONSTRAINT `visit_cust_key` FOREIGN KEY (`customer_id`) REFERENCES shutterfly.`customer` (`cust_key`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+table : ltv
+CREATE TABLE `ltv` (
+  `cust_id` varchar(20) NOT NULL,
+  `ltval` double DEFAULT NULL,
+  PRIMARY KEY (`cust_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
