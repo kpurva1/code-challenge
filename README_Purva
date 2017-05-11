@@ -1,0 +1,19 @@
+This file contains information about the coding challenge solution:
+
+Programming Language used : Java
+  java version "1.8.0_111"
+  Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
+  
+Database used : MySQL
+  Schema name : shutterfly
+  Tables : customer
+           site_visit
+           image
+           order
+           ltv
+
+Input to the code : JSON file
+  contains events data
+
+Output : CSV file
+  contains data of top x cutsomers having higher LTV
