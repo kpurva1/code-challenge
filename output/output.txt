@@ -1,1 +1,7 @@
-Your output data will end up here
+Customer Name,Customer Address,Lifetime Value
+Smith Jr,Middletown-AK,253.03
+Sundi,Halethorpe-MD,219.02
+Hauver,Ithaca-NY,165.83
+Peter,Palo Alto-CA,153.19
+Luca,Baltimore-MD,137.9
+
