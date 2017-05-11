@@ -1,1 +1,18 @@
-Your source files reside in this directory
+Programmin language : Java
+  java version "1.8.0_111"
+  Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
+
+Database : MySQL
+  Schema Name : shutterfly
+  Tables:
+        customer
+        site_visit
+        image
+        order
+        ltv
+        
+Input : JSON data file
+  contains events data in JSON format
+
+Output : CSV file
+    contains data of top x customers with higher LTV
